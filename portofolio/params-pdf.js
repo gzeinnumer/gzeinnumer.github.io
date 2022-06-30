@@ -65,21 +65,22 @@ var dataPortofolio = [
 var i = 0;
 for (i = 0; i < dataPortofolio.length; i++) {
     document.getElementById("portfolios").innerHTML += `
-          <figure class="gallery-grid__item category-concept lightWhiteColor"
-            style="border-radius: 20px;">
-            <div class="gallery-grid__image-wrap">
-              <img class="gallery-grid__image cover medium-zoom-image ls-is-cached lazyloaded"
-                src="assets/assets/protofolio/`+ dataPortofolio[i]['image'] + `"
-                dataPortofolio-zoom="" alt="">
-            </div>
-            <div class="news-item__caption">
-              <h2 class="title title--h4">`+ dataPortofolio[i]['title'] + `</h2>
-              <p>`+ dataPortofolio[i]['desc'] + `&nbsp;
+
+
+                <!-- Post -->
+                <article class="news-item box">
+                  <div class="news-item__image-wrap overlay overlay--45" style="height:330px;">
+                    <a class="news-item__link" href="single-post.html"></a>
+                    <img class="cover lazyload" src="assets/assets/protofolio/`+ dataPortofolio[i]['image'] + `" alt="" />
+                  </div>
+                  <div class="news-item__caption">
+                    <h2 class="title title--h4">`+ dataPortofolio[i]['title'] + `</h2>
+                    <p>`+ dataPortofolio[i]['desc'] + `&nbsp;
             <a target="_blank" href="`+ dataPortofolio[i]['url'] + `"><i>ReadMore...</i></a>
 
               </p>
-            </div>
-          </figure>
+                  </div>
+                </article>
         `;
     //<a class="news-item__link" href="`+ dataPortofolio[i]['url'] + `"><i>ReadMore...</i></a>
 }
@@ -220,6 +221,25 @@ for (let i = 0; i < dataSkills.length; i++) {
         <br>
     `;
     element['col'].forEach(d => {
+
+        // document.getElementById("mySkillsRow_" + i).innerHTML += `
+        //         <div class="col">
+        //         <!-- Progress -->
+        //         <div class="progress">
+        //             <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0"
+        //             aria-valuemax="100" style="width: 100%; z-index: 2;">
+        //             <div class="progress-text">
+        //                 <span>`+ d['title'] + `</span>
+        //                 <span></span>
+        //             </div>
+        //             </div>
+        //             <div class="progress-text">
+        //             <span>`+ d['title'] + `</span>
+        //             </div>
+        //         </div>
+        //         </div>
+        // `;
+
         document.getElementById("mySkillsRow_" + i).innerHTML += `
                 <div class="col">
                 <!-- Progress -->
@@ -230,9 +250,6 @@ for (let i = 0; i < dataSkills.length; i++) {
                         <span>`+ d['title'] + `</span>
                         <span></span>
                     </div>
-                    </div>
-                    <div class="progress-text">
-                    <span>`+ d['title'] + `</span>
                     </div>
                 </div>
                 </div>
